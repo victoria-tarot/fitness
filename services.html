@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Fitness Rénovation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --lime-green: #9acd32; --dark-grey: #1a1a1a; --light-grey: #f4f4f4; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; color: #333; background-color: var(--white); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: var(--dark-grey); font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        
+        /* HEADER IGUAL AL HOME */
+        header { background: var(--white); height: 70px; display: flex; align-items: center; position: fixed; width: 100%; top: 0; z-index: 999; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--dark-grey); text-transform: uppercase; }
+        .logo span { color: var(--lime-green); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; }
+        .nav-links a:hover { color: var(--lime-green); }
+        .burger { display: none; cursor: pointer; }
+        .burger div { width: 25px; height: 3px; background-color: var(--dark-grey); margin: 5px; transition: 0.3s; }
+
+        /* CONTENIDO SERVICIOS */
+        .page-header { margin-top: 70px; background: var(--dark-grey); color: white; padding: 60px 0; text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 80px 0; }
+        .service-card { background: var(--light-grey); padding: 40px; border-radius: 8px; border-bottom: 4px solid var(--lime-green); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .service-card h3 { margin-bottom: 15px; }
+
+        footer { background: var(--dark-grey); color: var(--white); padding: 40px 0; text-align: center; margin-top: 50px; }
+
+        @media screen and (max-width: 768px) {
+            .nav-links { position: absolute; right: 0; top: 70px; height: 92vh; background-color: var(--dark-grey); flex-direction: column; align-items: center; width: 100%; transform: translateX(100%); transition: 0.5s; padding-top: 60px; }
+            .nav-links a { color: white; font-size: 1.2rem; margin: 20px 0; }
+            .nav-active { transform: translateX(0%); }
+            .burger { display: block; }
+            .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--lime-green); }
+            .toggle .line2 { opacity: 0; }
+            .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--lime-green); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Fitness<span>Rénovation</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" style="color: var(--lime-green);">Nos Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="burger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Nos Expertises</h1>
+            <p>Solutions professionnelles pour votre salle de sport</p>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Remplacement Vinyle</h3>
+                <p>Nous utilisons du simili-cuir de qualité nautique, résistant à la transpiration, aux déchirures et à l'usage intensif.</p>
+            </div>
+            <div class="service-card">
+                <h3>Mousses Haute Densité</h3>
+                <p>Remplacement des mousses déformées par des mousses agglomérées haute densité pour retrouver le confort d'origine.</p>
+            </div>
+            <div class="service-card">
+                <h3>Réparation Structure</h3>
+                <p>Renforcement ou remplacement des planches de bois et supports métalliques sous les sièges.</p>
+            </div>
+            <div class="service-card">
+                <h3>Personnalisation</h3>
+                <p>Choix de couleurs variées pour correspondre à l'identité visuelle de votre marque ou salle de sport.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container"><p>&copy; 2024 Fitness Rénovation</p></div>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
