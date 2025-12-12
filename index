@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Rénovation | Expert Sellerie Fitness</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. VARIABLES & CONFIGURATION --- */
+        :root {
+            --lime-green: #9acd32; /* Vert du logo */
+            --dark-grey: #1a1a1a;  /* Noir "doux" premium */
+            --light-grey: #f4f4f4; /* Fond clair */
+            --white: #ffffff;
+            --text-color: #333333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--white);
+            overflow-x: hidden; /* Évite le scroll horizontal sur mobile */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-grey);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- 2. COMPOSANTS UI --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .btn-primary {
+            background-color: var(--lime-green);
+            color: var(--dark-grey);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 10px;
+        }
+
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* --- 3. HEADER & NAVIGATION MOBILE --- */
+        header {
+            background: var(--white);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--dark-grey);
+            text-transform: uppercase;
+        }
+        .logo span { color: var(--lime-green); }
+
+        /* Menu Desktop */
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-size: 0.9rem; font-weight: 600; }
+        .nav-links a:hover { color: var(--lime-green); }
+
+        /* Menu Mobile (Hamburger) */
+        .burger { display: none; cursor: pointer; }
+        .burger div {
+            width: 25px; height: 3px; background-color: var(--dark-grey);
+            margin: 5px; transition: all 0.3s ease;
+        }
+
+        /* --- 4. HERO SECTION (ACCUEIL) --- */
+        .hero {
+            height: 90vh; /* Prend presque tout l'écran */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+        /* --- 5. SECTION PRÉSENTATION --- */
+        .intro { padding: 80px 0; text-align: center; background: var(--light-grey); }
+        .intro h2 { margin-bottom: 20px; font-size: 2rem; }
+        .intro p { max-width: 700px; margin: 0 auto; color: #666; }
+
+        /* --- 6. FOOTER --- */
+        footer {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer p { opacity: 0.6; margin-top: 10px; }
+
+        /* --- 7. RESPONSIVE (MOBILE) --- */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                right: 0px;
+                top: 70px;
+                height: 92vh;
+                background-color: var(--dark-grey);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%; /* Menu plein écran sur mobile */
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                padding-top: 60px;
+            }
+            
+            .nav-links li { opacity: 0; margin: 20px 0; }
+            .nav-links a { color: var(--white); font-size: 1.2rem; }
+            
+            .burger { display: block; } /* Afficher le burger */
+            
+            /* Animation d'ouverture */
+            .nav-active { transform: translateX(0%); }
+            
+            /* Animation des liens */
+            @keyframes navLinkFade {
+                from { opacity: 0; transform: translateX(50px); }
+                to { opacity: 1; transform: translateX(0px); }
+            }
+
+            .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--lime-green); }
+            .toggle .line2 { opacity: 0; }
+            .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--lime-green); }
+
+            /* Ajustement Hero Mobile */
+            .hero h1 { font-size: 2rem; padding: 0 10px; }
+            .btn { display: block; width: 80%; margin: 15px auto; }
+            .btn-outline { margin-left: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Fitness<span>Rénovation</span></div>
+                
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos Services</a></li>
+                    <li><a href="realisations.html">Réalisations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Redonnez vie à<br>vos équipements</h1>
+            <p>Service premium de réparation et rénovation de sellerie pour salles de sport et particuliers.</p>
+            <a href="contact.html" class="btn btn-primary">Demander un Devis</a>
+            <a href="services.html" class="btn btn-outline">Voir Services</a>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <h2>L'Excellence du Détail</h2>
+            <p>Nous comprenons l'importance de l'image de votre salle. Une sellerie déchirée renvoie une image négligée. Nous intervenons rapidement avec des matériaux résistants à l'usure intensive.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Fitness Rénovation</h3>
+            <p>&copy; 2024 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+                
+                // Animation Burger
+                burger.classList.toggle('toggle');
+
+                // Animation Liens
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+            });
+        }
+        navSlide();
+    </script>
+</body>
+</html>
