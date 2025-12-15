@@ -10,7 +10,8 @@
     <style>
         /* --- 1. VARIABLES & CONFIGURATION --- */
         :root {
-            --lime-green: #9acd32; /* Vert du logo */
+            /* CAMBIO DE COLOR: Nuevo verde pino */
+            --pine-green: #2d5a27; 
             --dark-grey: #1a1a1a;  /* Noir "doux" premium */
             --light-grey: #f4f4f4; /* Fond clair */
             --white: #ffffff;
@@ -55,8 +56,9 @@
         }
 
         .btn-primary {
-            background-color: var(--lime-green);
-            color: var(--dark-grey);
+            /* Uso del nuevo color verde pino */
+            background-color: var(--pine-green);
+            color: var(--white); /* Texto blanco para mejor contraste */
         }
         
         .btn-outline {
@@ -87,19 +89,18 @@
             width: 100%;
         }
 
-        .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--dark-grey);
-            text-transform: uppercase;
+        /* CAMBIO EN EL LOGO PARA IMAGEN */
+        .logo-img {
+            height: 50px; /* Ajusta la altura según necesites */
+            width: auto;
+            display: block;
         }
-        .logo span { color: var(--lime-green); }
 
         /* Menu Desktop */
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { font-size: 0.9rem; font-weight: 600; }
-        .nav-links a:hover { color: var(--lime-green); }
+        /* Uso del nuevo color verde pino al pasar el mouse */
+        .nav-links a:hover { color: var(--pine-green); }
 
         /* Menu Mobile (Hamburger) */
         .burger { display: none; cursor: pointer; }
@@ -187,9 +188,10 @@
                 to { opacity: 1; transform: translateX(0px); }
             }
 
-            .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--lime-green); }
+            /* Uso del nuevo color verde pino para la animación del menú */
+            .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--pine-green); }
             .toggle .line2 { opacity: 0; }
-            .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--lime-green); }
+            .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--pine-green); }
 
             /* Ajustement Hero Mobile */
             .hero h1 { font-size: 2rem; padding: 0 10px; }
@@ -203,7 +205,9 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Fitness<span>Rénovation</span></div>
+                <a href="index.html">
+                    <img src="image_1.png" alt="Fitness Rénovation Logo" class="logo-img">
+                </a>
                 
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
