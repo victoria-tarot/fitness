@@ -10,10 +10,10 @@
     <style>
         /* --- 1. VARIABLES & CONFIGURATION --- */
         :root {
-            /* NUEVO COLOR: Verde Pino (#2d5a27) */
+            /* COLOR VERDE PINO */
             --pine-green: #2d5a27; 
-            --dark-grey: #1a1a1a;  /* Noir "doux" premium */
-            --light-grey: #f4f4f4; /* Fond clair */
+            --dark-grey: #1a1a1a;
+            --light-grey: #f4f4f4;
             --white: #ffffff;
             --text-color: #333333;
         }
@@ -24,7 +24,7 @@
             font-family: 'Open Sans', sans-serif;
             color: var(--text-color);
             background-color: var(--white);
-            overflow-x: hidden; /* Évite le scroll horizontal sur mobile */
+            overflow-x: hidden;
         }
 
         h1, h2, h3 {
@@ -56,7 +56,6 @@
         }
 
         .btn-primary {
-            /* Botones usando Verde Pino */
             background-color: var(--pine-green);
             color: var(--white);
         }
@@ -89,29 +88,27 @@
             width: 100%;
         }
 
-        /* ESTILOS DEL LOGO IMAGEN */
+        /* ESTILOS DEL LOGO */
         .logo-img {
-            height: 50px; /* Altura controlada */
+            height: 50px; 
             width: auto;
             display: block;
         }
 
-        /* Menu Desktop */
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { font-size: 0.9rem; font-weight: 600; }
         .nav-links a:hover { color: var(--pine-green); }
 
-        /* Menu Mobile (Hamburger) */
         .burger { display: none; cursor: pointer; }
         .burger div {
             width: 25px; height: 3px; background-color: var(--dark-grey);
             margin: 5px; transition: all 0.3s ease;
         }
 
-        /* --- 4. HERO SECTION (ACCUEIL) --- */
+        /* --- 4. HERO SECTION --- */
         .hero {
             height: 90vh;
-            /* FONDO ACTUALIZADO: Apunta a 1000053569.jpg */
+            /* IMAGEN DE FONDO: Usa el nombre exacto de tu archivo en GitHub */
             background: radial-gradient(circle at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%), url('1000053569.jpg');
             background-size: cover;
             background-position: center;
@@ -139,7 +136,7 @@
             text-shadow: 0 1px 5px rgba(0,0,0,0.5);
         }
 
-        /* --- 5. SECTION PRÉSENTATION --- */
+        /* --- 5. INTRO --- */
         .intro { padding: 80px 0; text-align: center; background: var(--light-grey); }
         .intro h2 { margin-bottom: 20px; font-size: 2rem; }
         .intro p { max-width: 700px; margin: 0 auto; color: #666; }
@@ -154,9 +151,9 @@
         }
         footer p { opacity: 0.6; margin-top: 10px; }
 
-        /* --- 7. RESPONSIVE (MOBILE) --- */
+        /* --- 7. RESPONSIVE --- */
         @media screen and (max-width: 768px) {
-            .logo-img { height: 40px; } /* Logo un poco más pequeño en móvil */
+            .logo-img { height: 40px; }
 
             .nav-links {
                 position: absolute;
@@ -185,7 +182,6 @@
                 to { opacity: 1; transform: translateX(0px); }
             }
 
-            /* Animación Burger en Verde Pino */
             .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--pine-green); }
             .toggle .line2 { opacity: 0; }
             .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--pine-green); }
@@ -251,13 +247,8 @@
             const navLinks = document.querySelectorAll('.nav-links li');
 
             burger.addEventListener('click', () => {
-                // Toggle Nav
                 nav.classList.toggle('nav-active');
-                
-                // Animation Burger
                 burger.classList.toggle('toggle');
-
-                // Animation Liens
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
                         link.style.animation = '';
