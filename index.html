@@ -10,7 +10,7 @@
     <style>
         /* --- 1. VARIABLES & CONFIGURATION --- */
         :root {
-            /* CAMBIO DE COLOR: Nuevo verde pino */
+            /* NUEVO COLOR: Verde Pino (#2d5a27) */
             --pine-green: #2d5a27; 
             --dark-grey: #1a1a1a;  /* Noir "doux" premium */
             --light-grey: #f4f4f4; /* Fond clair */
@@ -56,9 +56,9 @@
         }
 
         .btn-primary {
-            /* Uso del nuevo color verde pino */
+            /* Botones usando Verde Pino */
             background-color: var(--pine-green);
-            color: var(--white); /* Texto blanco para mejor contraste */
+            color: var(--white);
         }
         
         .btn-outline {
@@ -89,9 +89,9 @@
             width: 100%;
         }
 
-        /* CAMBIO EN EL LOGO PARA IMAGEN */
+        /* ESTILOS DEL LOGO IMAGEN */
         .logo-img {
-            height: 50px; /* Ajusta la altura según necesites */
+            height: 50px; /* Altura controlada */
             width: auto;
             display: block;
         }
@@ -99,7 +99,6 @@
         /* Menu Desktop */
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { font-size: 0.9rem; font-weight: 600; }
-        /* Uso del nuevo color verde pino al pasar el mouse */
         .nav-links a:hover { color: var(--pine-green); }
 
         /* Menu Mobile (Hamburger) */
@@ -112,7 +111,7 @@
         /* --- 4. HERO SECTION (ACCUEIL) --- */
         .hero {
             height: 90vh;
-            /* MEJORA 1: Degradado radial. Más claro al centro, más oscuro en los bordes */
+            /* FONDO ACTUALIZADO: Apunta a 1000053569.jpg */
             background: radial-gradient(circle at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%), url('1000053569.jpg');
             background-size: cover;
             background-position: center;
@@ -129,7 +128,6 @@
             font-size: 3rem;
             margin-bottom: 20px;
             text-transform: uppercase;
-            /* MEJORA 2: Sombra de texto para que resalte el blanco */
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         
@@ -137,8 +135,7 @@
             font-size: 1.1rem; 
             max-width: 600px; 
             margin: 0 auto; 
-            opacity: 0.95; /* Aumenté ligeramente la opacidad */
-            /* MEJORA 2: Sombra de texto más suave para el párrafo */
+            opacity: 0.95;
             text-shadow: 0 1px 5px rgba(0,0,0,0.5);
         }
 
@@ -159,6 +156,8 @@
 
         /* --- 7. RESPONSIVE (MOBILE) --- */
         @media screen and (max-width: 768px) {
+            .logo-img { height: 40px; } /* Logo un poco más pequeño en móvil */
+
             .nav-links {
                 position: absolute;
                 right: 0px;
@@ -168,7 +167,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                width: 100%; /* Menu plein écran sur mobile */
+                width: 100%;
                 transform: translateX(100%);
                 transition: transform 0.5s ease-in;
                 padding-top: 60px;
@@ -177,23 +176,20 @@
             .nav-links li { opacity: 0; margin: 20px 0; }
             .nav-links a { color: var(--white); font-size: 1.2rem; }
             
-            .burger { display: block; } /* Afficher le burger */
+            .burger { display: block; }
             
-            /* Animation d'ouverture */
             .nav-active { transform: translateX(0%); }
             
-            /* Animation des liens */
             @keyframes navLinkFade {
                 from { opacity: 0; transform: translateX(50px); }
                 to { opacity: 1; transform: translateX(0px); }
             }
 
-            /* Uso del nuevo color verde pino para la animación del menú */
+            /* Animación Burger en Verde Pino */
             .toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--pine-green); }
             .toggle .line2 { opacity: 0; }
             .toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--pine-green); }
 
-            /* Ajustement Hero Mobile */
             .hero h1 { font-size: 2rem; padding: 0 10px; }
             .btn { display: block; width: 80%; margin: 15px auto; }
             .btn-outline { margin-left: auto; }
@@ -205,8 +201,8 @@
     <header>
         <div class="container">
             <nav>
-                <a href="index.html">
-                    <img src="image_1.png" alt="Fitness Rénovation Logo" class="logo-img">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Fitness Rénovation" class="logo-img">
                 </a>
                 
                 <ul class="nav-links">
