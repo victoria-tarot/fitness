@@ -110,9 +110,9 @@
 
         /* --- 4. HERO SECTION (ACCUEIL) --- */
         .hero {
-            height: 90vh; /* Prend presque tout l'écran */
-            /* MODIFICACIÓN AQUÍ: Se usa tu imagen local */
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1000053569.jpg');
+            height: 90vh;
+            /* MEJORA 1: Degradado radial. Más claro al centro, más oscuro en los bordes */
+            background: radial-gradient(circle at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.75) 100%), url('1000053569.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -128,9 +128,18 @@
             font-size: 3rem;
             margin-bottom: 20px;
             text-transform: uppercase;
+            /* MEJORA 2: Sombra de texto para que resalte el blanco */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         
-        .hero p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+        .hero p { 
+            font-size: 1.1rem; 
+            max-width: 600px; 
+            margin: 0 auto; 
+            opacity: 0.95; /* Aumenté ligeramente la opacidad */
+            /* MEJORA 2: Sombra de texto más suave para el párrafo */
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+        }
 
         /* --- 5. SECTION PRÉSENTATION --- */
         .intro { padding: 80px 0; text-align: center; background: var(--light-grey); }
